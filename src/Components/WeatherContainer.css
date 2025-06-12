@@ -1,0 +1,14 @@
+/* WeatherContainer.css */
+.weather-container {
+    background-color: #2d2d2d;
+    border-radius: 25px;
+    padding: 30px;
+    width: 300px;
+    height: 100%; /* Permite que crezca dentro del contenedor padre */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+  

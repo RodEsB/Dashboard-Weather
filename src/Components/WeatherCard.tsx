@@ -1,17 +1,15 @@
 import React from 'react';
 import './WeatherCard.css';
-import sunny from '/src/assets/sunny.svg'; // Asegúrate de tener este icono
+import sunny from '/src/assets/sunny.svg';
 
 const WeatherCard: React.FC = () => {
   return (
     <div className="weather-card">
       <div className="weather-header">
-        <div className="weather-header-row">
-          <span className="location">
+        <span className="location">
           <i className="fa-solid fa-location-dot"></i> Ciudad de México
-          </span>
-          <span className="unit">°C</span>
-        </div>
+        </span>
+        <span className="unit">°C</span>
       </div>
 
       <div className="weather-body">
