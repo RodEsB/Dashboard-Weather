@@ -22,7 +22,7 @@ const WeatherCard: React.FC = () => {
 
       <div className="weather-footer">
         <img src={sunny} alt="Sunny" className="sun-icon" />
-        <p>Soleado</p>
+        <p className='weather-climate'>Soleado</p>
       </div>
     </div>
   );

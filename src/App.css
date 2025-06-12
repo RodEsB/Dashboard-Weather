@@ -16,13 +16,13 @@ body {
   padding: 30px;
   width: 1200px;
   height: 600px;
-  box-sizing: border-box; /* 👈 asegura que padding no agrande el contenedor */
+  box-sizing: border-box;
   overflow: hidden;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 20px;
+  gap: 0px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -30,7 +30,7 @@ body {
 .friendly-greetings{
   font-size: 20px;
   font-weight: lighter;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
 .title{
@@ -45,6 +45,13 @@ body {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: nowrap;
-  flex-shrink: 0;
 }
+
+.card-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-shrink: 0; /* importante para que mantenga su ancho */
+}
+
 

@@ -1,6 +1,7 @@
 import './App.css'
 import WeatherCard from './Components/WeatherCard';
 import WeatherContainer from './Components/WeatherContainer';
+import OtherCountries from './Components/OtherCountries';
 
 function App() {
   return (
@@ -12,9 +13,14 @@ function App() {
       
       {/* Contenedor flex para alinear horizontalmente */}
       <div className="weather-components">
+      {/* Contenedor vertical para WeatherCard y OtherCountries */}
+      <div className="card-stack">
         <WeatherCard />
-        <WeatherContainer />
+        <OtherCountries />
       </div>
+
+      <WeatherContainer />
+    </div>
     </div>
   )
 }
