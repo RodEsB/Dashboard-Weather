@@ -2,6 +2,7 @@ import './App.css'
 import WeatherCard from './Components/WeatherCard';
 import WeatherContainer from './Components/WeatherContainer';
 import OtherCountries from './Components/OtherCountries';
+import Search from './Components/Search';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
         <h2 className="title">Bienvenido al Dashboard</h2>
       </div>
       
+      <Search />
+
       {/* Contenedor flex para alinear horizontalmente */}
       <div className="weather-components">
       {/* Contenedor vertical para WeatherCard y OtherCountries */}

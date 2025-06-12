@@ -65,10 +65,11 @@
   }
   
   .sun-icon {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
   }
   
   .weather-climate{
     font-size: 12px;
+    margin-top: 0px
   }

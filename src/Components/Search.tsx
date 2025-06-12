@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import search from './assets/search.svg'
-import './App.css'
+import search from '/src/assets/search.svg'
 
 function App() {
   const [query, setQuery] = useState('')

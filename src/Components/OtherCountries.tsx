@@ -1,15 +1,18 @@
 import './OtherCountires.css';
+import WeatherInfo from './WeatherInfo';
 
 function App() {
   return (
     <div className="otherCountries-container">
-      
-      {/* Llamada para los componentes */}
-      <div className='otherCountries-text'>
+      <div className="otherCountries-text">
         <h3>Otros países</h3>
+      </div>
+
+      <div className="weatherInfo-centered">
+        <WeatherInfo />
       </div>
     </div>
   )
 }
 
-export default App
+export default App;
