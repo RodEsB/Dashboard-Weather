@@ -1,14 +1,13 @@
-/* OtherCountries.css */
 .otherCountries-container {
   background-color: #2d2d2d;
   border-radius: 25px;
   padding: 10px 20px 30px 20px;
-  width: 310px;
+  width: 290px;
   height: 130px;
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 4px;
 }
 
 .otherCountries-text {
@@ -19,7 +18,17 @@
 
 .weatherInfo-centered {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   width: 100%;
-  margin-top: -20px;
+  margin-top: -25px;
+}
+
+/* Responsividad */
+@media (max-width: 767px) {
+  .otherCountries-container {
+    width: 100% !important;
+    max-width: none;
+    height: auto;
+    padding: 15px 20px 25px 20px;
+  }
 }
