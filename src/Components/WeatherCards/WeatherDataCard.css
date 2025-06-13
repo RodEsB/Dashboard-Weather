@@ -44,7 +44,7 @@
 @media (max-width: 767px) {
   .weather-data-card {
     width: 100% !important;
-    max-width: none;
+    max-width: 100%;
     height: auto;
     padding: 10px;
   }

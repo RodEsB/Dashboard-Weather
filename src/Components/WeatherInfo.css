@@ -52,7 +52,7 @@
 /* Responsividad */
 @media (max-width: 767px) {
   .weatherInfo-container {
-    max-width: 100%;
+    max-width: 90%;
     width: 100%;
   }
 }

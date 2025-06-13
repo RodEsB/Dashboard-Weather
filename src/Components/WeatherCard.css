@@ -76,7 +76,7 @@
 @media (max-width: 767px) {
   .weather-card {
     width: 100% !important;
-    max-width: none;
+    max-width: 70%;
     height: auto;
     padding: 15px;
   }

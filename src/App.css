@@ -106,6 +106,7 @@ body {
   .card-stack {
     flex-direction: column;
     width: 100%;
+    align-items: center;
   }
 
   /* Que tarjetas y componentes ocupen el ancho completo */
