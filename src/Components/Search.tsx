@@ -1,21 +1,21 @@
 import { useState } from 'react'
 import search from '/src/assets/search.svg'
+import './SearchBar.css'
 
 function App() {
   const [query, setQuery] = useState('')
 
   return (
     <div className="search-bar">
+    <img src={search} alt="Buscar" / >
       <input
         type="text"
-        placeholder="Buscar..."
+        placeholder="Buscar clima por ciudad"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <button>
-        <img src={search} alt="Buscar" />
-      </button>
-    </div>
+       
+     </div>
   )
 }
 
