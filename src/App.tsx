@@ -7,14 +7,14 @@ import Search from './Components/Search';
 function App() {
   return (
     <div className="dashboard-container">
-      <div className="greetings">
+      <div className="top-bar">
+        <div className="greetings">
         <h3 className="friendly-greetings">Hola que tal!</h3>
         <h2 className="title">Bienvenido al Dashboard</h2>
       </div>
-      
       <Search />
-
-      {/* Contenedor flex para alinear horizontalmente */}
+    </div>
+    
       <div className="weather-components">
       {/* Contenedor vertical para WeatherCard y OtherCountries */}
       <div className="card-stack">

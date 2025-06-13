@@ -5,8 +5,8 @@
     background-color: #2d2d2d;
     border-radius: 25px;
     padding: 10px 20px;
-    width: 260px;
-    height: 45px;
+    width: 280px;
+    height: 30px;
   }
   
   .search-bar input {
@@ -14,10 +14,11 @@
     border: none;
     outline: none;
     color: white;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: lighter;
     flex: 1;
     padding: 0;
-    font-family: inherit;
+    font-family: 'Segoe UI', sans-serif;
   }
   
   .search-bar input::placeholder {
@@ -25,7 +26,7 @@
   }
   
   .search-bar img {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
   
