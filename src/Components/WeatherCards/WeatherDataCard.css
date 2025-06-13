@@ -2,15 +2,15 @@
     background-color: #373737;
     border-radius: 25px;
     padding: 15px;
-    width: 150px;
-    height: 120px;
+    width: 170px;
+    height: 88px;
     display: flex;
     align-items: center;
     gap: 12px;
   }
   
   .icon-container {
-    padding: 10px;
+    padding: 5px;
     border-radius: 50%;
     display: grid;
     place-items: center;
@@ -31,4 +31,10 @@
   .data-content span {
     font-size: 20px;
     opacity: 0.8;
+  }
+
+  .sunrise {
+    width: 40px;
+    height: 40px;
+    display: block;
   }
