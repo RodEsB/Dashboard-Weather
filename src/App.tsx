@@ -16,12 +16,12 @@ function App() {
     </div>
     
       <div className="weather-components">
-      {/* Contenedor vertical para WeatherCard y OtherCountries */}
       <div className="card-stack">
         <WeatherCard />
+      </div>
+      <div className="card-stack-countries">
         <OtherCountries />
       </div>
-
       <WeatherContainer />
     </div>
     </div>
