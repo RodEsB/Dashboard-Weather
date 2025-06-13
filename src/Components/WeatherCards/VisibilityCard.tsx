@@ -1,4 +1,5 @@
 import WeatherDataCard from './WeatherDataCard';
+import windIcon from '/src/assets/visibility_icon.svg';
 
 interface VisibilityCardProps {
   speed: number;
@@ -8,9 +9,10 @@ interface VisibilityCardProps {
 const VisibilityCard = ({ speed, unit = 'km' }: VisibilityCardProps) => {
   return (
     <WeatherDataCard
-      title="Visibilidad"
-      value={speed}
-      unit={unit}
+        icon={<img src={windIcon} className="visibility_icon" alt="Ícono de visibilidad" />}
+        title="Visibilidad"
+        value={speed}
+        unit={unit}
     />
   );
 };

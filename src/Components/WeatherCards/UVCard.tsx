@@ -1,4 +1,5 @@
 import WeatherDataCard from './WeatherDataCard';
+import windIcon from '/src/assets/uv_icon.svg';
 
 interface UVCardProps {
   unit?: string;
@@ -7,8 +8,9 @@ interface UVCardProps {
 const UVCard = ({ unit = 'UV' }: UVCardProps) => {
   return (
     <WeatherDataCard
-      title="Rayos UV"
-      unit={unit}
+        icon={<img src={windIcon} className="uv-icon" alt="Ícono de uv" />}
+        title="Rayos UV"
+        unit={unit}
     />
   );
 };

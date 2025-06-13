@@ -4,11 +4,18 @@
     border-radius: 25px;
     padding: 30px;
     width: 450px;
-    height: 380px; /* Permite que crezca dentro del contenedor padre */
+    height: 380px; 
     color: white;
     display: flex;
     flex-direction: column;
     gap: 20px;
     
   }
+
+  .weather-data-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
   
