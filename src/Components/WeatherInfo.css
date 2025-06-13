@@ -1,9 +1,10 @@
 .weatherInfo-container {
     background-color: #373737;
     border-radius: 25px;
-    padding: 10px 20px;
-    width: 260px;
-    height: 80px;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    padding: 10px;
     color: white;
     display: flex;
     flex-direction: row;
@@ -18,7 +19,7 @@
     justify-content: center;
     font-size: 11px;
     line-height: 1.2;
-    max-width: 90px;
+    max-width: 90px; 
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -39,12 +40,30 @@
   }
   
   .weatherInfo-icon img {
-    width: 54px;
-    height: 54px;
+    width: 50px;
+    height: 50px;
   }
   
   .weatherInfo-temp {
     font-size: 20px;
     font-weight: bold;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .weatherInfo-container {
+      width: 90%;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .weatherInfo-icon img {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .weatherInfo-temp h2 {
+      font-size: 24px;
+    }
   }
   

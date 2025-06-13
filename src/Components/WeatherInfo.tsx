@@ -1,7 +1,7 @@
 import './WeatherInfo.css';
 import sunnyIcon from '../assets/sunny.svg'; // Ajusta la ruta según tu estructura
 
-function App() {
+function WeatherInfo() {
   return (
     <div className="weatherInfo-container">
       
@@ -26,4 +26,4 @@ function App() {
   )
 }
 
-export default App;
+export default WeatherInfo;

@@ -1,7 +1,7 @@
 import './OtherCountires.css';
 import WeatherInfo from './WeatherInfo';
 
-function App() {
+function OtherCountires() {
   return (
     <div className="otherCountries-container">
       <div className="otherCountries-text">
@@ -15,4 +15,4 @@ function App() {
   )
 }
 
-export default App;
+export default OtherCountires;

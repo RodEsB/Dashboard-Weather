@@ -100,21 +100,30 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
-  }
-
-  .search-bar {
-    width: 90%;
-    justify-content: center;
+    text-align: center;
   }
 
   .weather-components {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
 
   .card-stack,
-  .dashboard-card {
+  .dashboard-card,
+  .weather-card,
+  .weather-container {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .weatherInfo-container {
     width: 90%;
-    align-items: center;
+  }
+
+  .search-bar {
+    width: 100%;
+    justify-content: center;
   }
 }
+

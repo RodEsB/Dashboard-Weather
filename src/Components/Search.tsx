@@ -2,7 +2,7 @@ import { useState } from 'react'
 import search from '/src/assets/search.svg'
 import './SearchBar.css'
 
-function App() {
+function Search() {
   const [query, setQuery] = useState('')
 
   return (
@@ -19,4 +19,4 @@ function App() {
   )
 }
 
-export default App
+export default Search

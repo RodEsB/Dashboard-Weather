@@ -18,4 +18,17 @@
     gap: 10px;
   }
   
+  @media screen and (max-width: 768px) {
+    .weather-data-container {
+      grid-template-columns: 1fr; 
+      gap: 15px;
+    }
+  
+    .weather-container {
+      width: 100%;
+      max-width: 90%;
+      height: auto;
+      padding: 20px;
+    }
+  }
   

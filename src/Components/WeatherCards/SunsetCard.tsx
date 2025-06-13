@@ -1,4 +1,4 @@
-// src/components/WeatherCards/HumidityCard.tsx
+// src/components/WeatherCards/SunsetCard.tsx
 import WeatherDataCard from './WeatherDataCard';
 import sunSet from '/src/assets/sunset.svg';
 

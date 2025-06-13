@@ -1,7 +1,7 @@
 import './WeatherContainer.css';
 import { WindSpeedCard, HumidityCard, UVCard, VisibilityCard, SunriseCard, SunsetCard} from './WeatherCards';
 
-function App() {
+function WeatherContainer() {
   return (
     <div className="weather-container">
       <div className="weather-data-container">
@@ -16,4 +16,4 @@ function App() {
   )
 }
 
-export default App
+export default WeatherContainer
