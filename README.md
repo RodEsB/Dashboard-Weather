@@ -57,10 +57,11 @@ En caso de que el usuario no otorgue permisos, la app carga por defecto el clima
 
 
 2. Instala las dependencias:
-```bash
+  ```bash
   npm install
 
 3. Ejecuta el proyecto:
+  ```bash
   npm run dev
 
 ## 📦 Dependencias clave
