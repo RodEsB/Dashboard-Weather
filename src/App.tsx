@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import WeatherCard from './Components/WeatherCard';
 import WeatherContainer from './Components/WeatherContainer';
@@ -7,7 +7,8 @@ import Search from './Components/Search';
 
 function App() {
   const [weatherData, setWeatherData] = useState<any>(null);
-  const apiKey = '73cc44eaae4d46dca89195102251306'; 
+  const [error, setError] = useState<string | null>(null);  // <-- estado para error
+  const apiKey = '73cc44eaae4d46dca89195102251306';
 
   const fetchWeather = async (city: string) => {
     try {
@@ -15,16 +16,23 @@ function App() {
         `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&lang=es`
       );
       const data = await response.json();
-      setWeatherData(data);
+
+      if (data.error) {
+        setError('Por favor ingresa un nombre de ciudad válido.');
+        setWeatherData(null);
+      } else {
+        setError(null);
+        setWeatherData(data);
+      }
     } catch (error) {
       console.error('Error fetching weather:', error);
+      setError('Error al buscar el clima. Intenta nuevamente.');
       setWeatherData(null);
     }
   };
 
-  // Búsqueda automática al cargar la página
   useEffect(() => {
-    fetchWeather('Cholula');
+    fetchWeather('San Andres Cholula');
   }, []);
 
   return (
@@ -39,10 +47,11 @@ function App() {
 
       <div className="weather-components">
         <div className="card-stack">
-          <WeatherCard weather={weatherData} />
+          {/* Pasamos el error también */}
+          <WeatherCard weather={weatherData} error={error} />
         </div>
         <div className="card-stack-countries">
-          <OtherCountries/>
+          <OtherCountries />
         </div>
         <WeatherContainer weather={weatherData} />
       </div>

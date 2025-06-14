@@ -3,10 +3,18 @@ import './WeatherCard.css';
 
 type WeatherCardProps = {
   weather?: any;
+  error?: string | null;  // <-- recibimos error como prop
 };
 
-const WeatherCard: React.FC<WeatherCardProps> = ({ weather }) => {
-  // Verificar que weather, weather.location y weather.current existen
+const WeatherCard: React.FC<WeatherCardProps> = ({ weather, error }) => {
+  if (error) {
+    return (
+      <div className="weather-card error">
+        <p>{error}</p>
+      </div>
+    );
+  }
+
   if (
     !weather ||
     !weather.location ||

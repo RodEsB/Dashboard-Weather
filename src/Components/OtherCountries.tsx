@@ -23,7 +23,6 @@ function OtherCountries() {
     fetchFixedWeather();
   }, []);
 
-  // Pasa fixedWeatherData a WeatherInfo si quieres mostrar datos dinámicos ahí
   return (
     <div className="otherCountries-container">
       <div className="otherCountries-text">
@@ -31,7 +30,6 @@ function OtherCountries() {
       </div>
 
       <div className="weatherInfo-centered">
-        {/* Aquí podrías adaptar WeatherInfo para recibir props */}
         <WeatherInfo weather={fixedWeatherData} />
       </div>
     </div>
