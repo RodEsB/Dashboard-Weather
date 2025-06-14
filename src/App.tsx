@@ -42,7 +42,7 @@ function App() {
           <WeatherCard weather={weatherData} />
         </div>
         <div className="card-stack-countries">
-          <OtherCountries weather={weatherData} />
+          <OtherCountries/>
         </div>
         <WeatherContainer weather={weatherData} />
       </div>

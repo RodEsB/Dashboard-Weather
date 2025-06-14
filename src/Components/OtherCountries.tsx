@@ -1,11 +1,29 @@
-import './OtherCountires.css';
+import { useState, useEffect } from 'react';
 import WeatherInfo from './WeatherInfo';
+import '/src/Components/OtherCountires.css';
 
-type OtherCountriesProps = {
-  weather?: any;
-};
+function OtherCountries() {
+  const [fixedWeatherData, setFixedWeatherData] = useState<any>(null);
+  const apiKey = '73cc44eaae4d46dca89195102251306';
 
-function OtherCountries({ weather }: OtherCountriesProps) {
+  useEffect(() => {
+    const fetchFixedWeather = async () => {
+      try {
+        const response = await fetch(
+          `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Canberra&lang=es`
+        );
+        const data = await response.json();
+        setFixedWeatherData(data);
+      } catch (error) {
+        console.error('Error fetching fixed weather:', error);
+        setFixedWeatherData(null);
+      }
+    };
+
+    fetchFixedWeather();
+  }, []);
+
+  // Pasa fixedWeatherData a WeatherInfo si quieres mostrar datos dinámicos ahí
   return (
     <div className="otherCountries-container">
       <div className="otherCountries-text">
@@ -13,7 +31,8 @@ function OtherCountries({ weather }: OtherCountriesProps) {
       </div>
 
       <div className="weatherInfo-centered">
-        <WeatherInfo weather={weather} />
+        {/* Aquí podrías adaptar WeatherInfo para recibir props */}
+        <WeatherInfo weather={fixedWeatherData} />
       </div>
     </div>
   );
