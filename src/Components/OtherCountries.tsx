@@ -1,7 +1,11 @@
 import './OtherCountires.css';
 import WeatherInfo from './WeatherInfo';
 
-function OtherCountires() {
+type OtherCountriesProps = {
+  weather?: any;
+};
+
+function OtherCountries({ weather }: OtherCountriesProps) {
   return (
     <div className="otherCountries-container">
       <div className="otherCountries-text">
@@ -9,10 +13,10 @@ function OtherCountires() {
       </div>
 
       <div className="weatherInfo-centered">
-        <WeatherInfo />
+        <WeatherInfo weather={weather} />
       </div>
     </div>
-  )
+  );
 }
 
-export default OtherCountires;
+export default OtherCountries;

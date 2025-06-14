@@ -1,29 +1,39 @@
 import './WeatherInfo.css';
-import sunnyIcon from '../assets/sunny.svg'; // Ajusta la ruta según tu estructura
 
-function WeatherInfo() {
+type WeatherInfoProps = {
+  weather?: any;
+};
+
+function WeatherInfo({ weather }: WeatherInfoProps) {
+  if (!weather) {
+    return <div className="weatherInfo-container">Cargando clima...</div>;
+  }
+
+  const location = weather.location.name;
+  const country = weather.location.country;
+  const temp = weather.current.temp_c;
+  const condition = weather.current.condition.text;
+  const icon = weather.current.condition.icon;
+
   return (
     <div className="weatherInfo-container">
       
-      {/* Parte izquierda: texto del país */}
       <div className="weatherInfo-text">
-        <h3>Australia</h3>
-        <h2>Canberra</h2>
-        <p>Soleado</p>
+        <h3>{country}</h3>
+        <h2>{location}</h2>
+        <p>{condition}</p>
       </div>
 
-      {/* Parte central: imagen */}
       <div className="weatherInfo-icon">
-        <img src={sunnyIcon} alt="Sunny" />
+        <img src={icon} alt={condition} />
       </div>
 
-      {/* Parte derecha: grados */}
       <div className="weatherInfo-temp">
-        <h2>32°</h2>
+        <h2>{temp}°</h2>
       </div>
 
     </div>
-  )
+  );
 }
 
 export default WeatherInfo;

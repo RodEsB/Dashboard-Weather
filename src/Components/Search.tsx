@@ -11,7 +11,7 @@ function Search({ onSearch }: SearchProps) {
 
   const handleSearch = () => {
     if (!query) return
-    onSearch(query)  // Aquí le dices a App que busque el clima para la ciudad
+    onSearch(query)  
   }
 
   return (

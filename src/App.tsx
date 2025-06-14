@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import './App.css';
 import WeatherCard from './Components/WeatherCard';
 import WeatherContainer from './Components/WeatherContainer';
@@ -7,7 +7,7 @@ import Search from './Components/Search';
 
 function App() {
   const [weatherData, setWeatherData] = useState<any>(null);
-  const apiKey = '73cc44eaae4d46dca89195102251306'; // pon tu API Key aquí
+  const apiKey = '73cc44eaae4d46dca89195102251306'; 
 
   const fetchWeather = async (city: string) => {
     try {
@@ -21,6 +21,11 @@ function App() {
       setWeatherData(null);
     }
   };
+
+  // Búsqueda automática al cargar la página
+  useEffect(() => {
+    fetchWeather('Cholula');
+  }, []);
 
   return (
     <div className="dashboard-container">
@@ -37,7 +42,7 @@ function App() {
           <WeatherCard weather={weatherData} />
         </div>
         <div className="card-stack-countries">
-          <OtherCountries />
+          <OtherCountries weather={weatherData} />
         </div>
         <WeatherContainer weather={weatherData} />
       </div>
