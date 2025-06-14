@@ -96,7 +96,7 @@ Durante el desarrollo, se utilizó **ChatGPT** como asistente técnico para:
 
 | Escritorio | Móvil |
 |-----------|--------|
-| ![](./src/assets/desktop.png) | ![](./src/assets/desktop.png) |
+| ![](./src/assets/desktop.png) | ![](./src/assets/mobile.png) |
 
 
 ---
