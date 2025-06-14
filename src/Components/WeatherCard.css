@@ -3,7 +3,7 @@
   border-radius: 20px;
   padding: 25px;
   width: 300px;
-  height: 200px;
+  height: 290px;
   color: white;
   display: flex;
   flex-direction: column;
@@ -65,8 +65,8 @@
 
 .sun-icon {
   margin-top: -10px;
-  width: 70px;
-  height: 70px;
+  width: 120px;
+  height: 120px;
 }
 
 .weather-climate {
