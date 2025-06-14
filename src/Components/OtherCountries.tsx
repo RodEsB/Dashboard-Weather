@@ -2,25 +2,32 @@ import { useState, useEffect } from 'react';
 import WeatherInfo from './WeatherInfo';
 import '/src/Components/OtherCountires.css';
 
+const apiKey = '73cc44eaae4d46dca89195102251306';
+
+const cities = ['Canberra', 'Okinawa']; 
+
 function OtherCountries() {
-  const [fixedWeatherData, setFixedWeatherData] = useState<any>(null);
-  const apiKey = '73cc44eaae4d46dca89195102251306';
+  const [weatherData, setWeatherData] = useState<any[]>([]);
 
   useEffect(() => {
-    const fetchFixedWeather = async () => {
+    const fetchAllWeather = async () => {
       try {
-        const response = await fetch(
-          `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Canberra&lang=es`
+        const responses = await Promise.all(
+          cities.map(async (city) => {
+            const response = await fetch(
+              `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&lang=es`
+            );
+            const data = await response.json();
+            return data;
+          })
         );
-        const data = await response.json();
-        setFixedWeatherData(data);
+        setWeatherData(responses);
       } catch (error) {
-        console.error('Error fetching fixed weather:', error);
-        setFixedWeatherData(null);
+        console.error('Error fetching weather for other countries:', error);
       }
     };
 
-    fetchFixedWeather();
+    fetchAllWeather();
   }, []);
 
   return (
@@ -29,8 +36,10 @@ function OtherCountries() {
         <h3>Otros países</h3>
       </div>
 
-      <div className="weatherInfo-centered">
-        <WeatherInfo weather={fixedWeatherData} />
+      <div className="weatherInfo-grid">
+        {weatherData.map((data, index) => (
+          <WeatherInfo key={index} weather={data} />
+        ))}
       </div>
     </div>
   );

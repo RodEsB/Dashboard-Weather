@@ -7,13 +7,15 @@ import Search from './Components/Search';
 
 function App() {
   const [weatherData, setWeatherData] = useState<any>(null);
-  const [error, setError] = useState<string | null>(null);  // <-- estado para error
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true); // estado para mostrar cargando
   const apiKey = '73cc44eaae4d46dca89195102251306';
 
-  const fetchWeather = async (city: string) => {
+  const fetchWeather = async (cityOrCoords: string) => {
     try {
+      setLoading(true); // mostrar cargando cada vez que se hace fetch
       const response = await fetch(
-        `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&lang=es`
+        `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${cityOrCoords}&lang=es`
       );
       const data = await response.json();
 
@@ -28,11 +30,27 @@ function App() {
       console.error('Error fetching weather:', error);
       setError('Error al buscar el clima. Intenta nuevamente.');
       setWeatherData(null);
+    } finally {
+      setLoading(false); // ocultar cargando al terminar
     }
   };
-
+  //Geologalización
   useEffect(() => {
-    fetchWeather('San Andres Cholula');
+    if (navigator.geolocation) { 
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          fetchWeather(`${latitude},${longitude}`);
+        },
+        (error) => {
+          console.error('Error al obtener ubicación:', error);
+          fetchWeather('San Andres Cholula');
+        }
+      );
+    } else {
+      console.warn('Geolocalización no soportada por el navegador');
+      fetchWeather('San Andres Cholula'); //En caso que no funcione o no acepte usa el default
+    }
   }, []);
 
   return (
@@ -47,8 +65,12 @@ function App() {
 
       <div className="weather-components">
         <div className="card-stack">
-          {/* Pasamos el error también */}
-          <WeatherCard weather={weatherData} error={error} />
+          {/* Mostrar mensaje si está cargando */}
+          {loading ? (
+            <p className="loading-message">Obteniendo clima basado en tu ubicación...</p>
+          ) : (
+            <WeatherCard weather={weatherData} error={error} />
+          )}
         </div>
         <div className="card-stack-countries">
           <OtherCountries />

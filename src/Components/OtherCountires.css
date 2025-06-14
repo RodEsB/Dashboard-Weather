@@ -3,7 +3,7 @@
   border-radius: 25px;
   padding: 10px 20px 30px 20px;
   width: 290px;
-  height: 150px;
+  height: 300px;
   color: white;
   display: flex;
   flex-direction: column;
@@ -22,6 +22,20 @@
   width: 100%;
   margin-top: -25px;
 }
+
+.weatherInfo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+}
+
+.weatherInfo-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 /* Responsividad */
 @media (max-width: 767px) {
